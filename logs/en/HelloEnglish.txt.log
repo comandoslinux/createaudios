@@ -1,0 +1,19 @@
+Original name: HelloEnglish.txt
+Current path: /home/opalencia/bash/CreateAudios
+Your file has something: Hello world, text to speech is great, take care of your eyes by listening instead of reading.
+Model chosen: tts_models/en/ljspeech/glow-tts
+Vocoder chosen: vocoder_models/en/ljspeech/multiband-melgan
+ > tts_models/en/ljspeech/glow-tts is already downloaded.
+ > vocoder_models/en/ljspeech/multiband-melgan is already downloaded.
+ > Using model: glow_tts
+ > Vocoder Model: multiband_melgan
+ > Generator Model: multiband_melgan_generator
+ > Discriminator Model: melgan_multiscale_discriminator
+ > Text: Hello world, text to speech is great, take care of your eyes by listening instead of reading.
+ > Text splitted to sentences.
+['Hello world, text to speech is great, take care of your eyes by listening instead of reading.']
+ > Phonemes: h|ə|l|oʊ| w|ɜː|l|d| ,| t|ɛ|k|s|t| t|uː| s|p|iː|tʃ| ɪ|z| ɡ|ɹ|eɪ|t| ,| t|eɪ|k| k|ɛɹ| ʌ|v| j|ʊɹ| aɪ|z| b|aɪ| l|ɪ|s|ə|n|ɪ|ŋ| ɪ|n|s|t|ɛ|d| ʌ|v| ɹ|iː|d|ɪ|ŋ| .
+ > Processing time: 1.548565149307251
+ > Real-time factor: 0.21827926218564542
+ > Saving output to /home/opalencia/bash/CreateAudios/audios/en/HelloEnglish/1HelloEnglish.wav
+This script stopped in exit: 0

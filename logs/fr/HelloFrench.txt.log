@@ -1,0 +1,23 @@
+Original name: HelloFrench.txt
+Current path: /home/opalencia/bash/CreateAudios
+Your file has something: Bonjour tout le monde, la synthèse vocale est géniale, prenez soin de vos yeux en écoutant au lieu de lire.
+Model chosen: tts_models/fr/mai/tacotron2-DDC
+Vocoder chosen: vocoder_models/universal/libri-tts/fullband-melgan
+ > tts_models/fr/mai/tacotron2-DDC is already downloaded.
+ > vocoder_models/universal/libri-tts/fullband-melgan is already downloaded.
+ > Using model: Tacotron2
+ > Vocoder Model: fullband_melgan
+ > Generator Model: fullband_melgan_generator
+ > Discriminator Model: melgan_multiscale_discriminator
+ > Text: Bonjour tout le monde, la synthèse vocale est géniale, prenez soin de vos yeux en écoutant au lieu de lire.
+ > Text splitted to sentences.
+['Bonjour tout le monde, la synthèse vocale est géniale, prenez soin de vos yeux en écoutant au lieu de lire.']
+ > Phonemes: b|ɔ̃|ʒ|u|ʁ| t|u| l|ə-| m|ɔ̃|d| ,| l|a-| s|ɛ̃|t|ɛ|z| v|o|k|a|l| ɛ| ʒ|e|n|j|a|l| ,| p|ʁ|ə|n|e| s|w|ɛ̃| d|ə-| v|o| j|ø| ɑ̃|n| e|k|u|t|ɑ̃|t| o| l|j|ø| d|ə-| l|i|ʁ| .
+   > Decoder stopped with `max_decoder_steps` 500
+ > interpolating tts model output.
+ > before interpolation : (80, 500)
+ > after interpolation : torch.Size([1, 80, 750])
+ > Processing time: 8.53637981414795
+ > Real-time factor: 1.2507516211205787
+ > Saving output to /home/opalencia/bash/CreateAudios/audios/fr/HelloFrench/1HelloFrench.wav
+This script stopped in exit: 0
