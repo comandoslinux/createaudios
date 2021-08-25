@@ -14,7 +14,7 @@ Requirements:
 
 3. A ffmpeg version: https://ffmpeg.org/
 
-[How to merge audios?](https://github.com/comandoslinux/createaudios/MergeAudios)
+[How to merge audios?](MergeAudios.md)
 
 
 Extra: to avoid problems with your python environment, create a virtualenv to install Mozilla tts there.
