@@ -4,6 +4,8 @@ This bash script converts a text file.txt into a file.wav. Right now these langu
 
 ## Requirements:
 
+0. Run the script "VerifyBooktxt.sh". This is boring but needed, after you have checked line by line each book.txt you will have a well formatted book.txt and probably no problems will occur while converting the book.txt into a book.wav. This script will create a lot of txt files inside the folder "~/createaudios/txtfiles/" and you have to verify line by line that everything it is perfect, if it is not then modify the corresponding line in the book.txt.
+
 1. Mozilla Text to Speech: https://github.com/mozilla/TTS
 
 2. Well formatted txt file must be:
@@ -54,7 +56,7 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
    $ en
 
-5. Write the name of your book.txt you want to convert into a book.wav (Obviously you have to save 'AliceinwonderlandEnglish.txt' book first in ~/CreateAudios/txtfiles)
+5. Write the name of your book.txt you want to convert into a book.wav (Obviously you have to save 'AliceinwonderlandEnglish.txt' book first in ~/createaudios/txtfiles/)
 
    $ AliceinwonderlandEnglish.txt
 

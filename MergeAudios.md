@@ -18,6 +18,6 @@ If your script ("CreateAudios.sh") ran successfully you have a lot of wav files 
 
    $ ffmpeg -f concat -safe 0 -i wavlist.txt -c copy AliceinwonderlandEnglish.wav
 
-5. Opctional (Remove unnecessary wav files)
+5. Optional (Remove unnecessary wav files)
 
    $ rm -f !(AliceinwonderlandEnglish.wav|wavlist.txt)

@@ -3,13 +3,11 @@
 set -e 
 set -o pipefail
 
-# Create audio files with mozilla Text to Speech (TTS)
-# The user writes the name of the file in txt format
-# (which must be saved near this script) and then
-# the script converts that file txt into a file.wav.
-
-# If tts is not installed, exit the script and do nothing
-tts=`command -v tts >/dev/null 2>&1 || { echo >&2 "Mozilla tts not found. Install it first."; exit 2; }`
+# Verify line by line each book.txt
+# to ensure that the text will be
+# well formatted, if it is not
+# then just modify the respective
+# line in the original book.txt
 
 parentPath=`pwd`
 
@@ -27,38 +25,20 @@ echo "File name without spaces: $fileName2"
 fileNamenotxt="${fileName2/.txt/}"
 echo "File renamed: $fileNamenotxt"
 
-# Assign the model and vocoder
-myModel=""
-myVocoder=""
-
 if [ "$LANGUAGE" == "en" ]; then
      echo "Your language is: English"
-     myModel="tts_models/en/ljspeech/glow-tts"
-     myVocoder="vocoder_models/en/ljspeech/multiband-melgan"
 elif [ "$LANGUAGE" == "es" ]; then
      echo "Your language is: Spanish"
-     myModel="tts_models/es/mai/tacotron2-DDC"
-     myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
 elif [ "$LANGUAGE" == "fr" ]; then
      echo "Your language is: French"
-     myModel="tts_models/fr/mai/tacotron2-DDC"
-     myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
 elif [ "$LANGUAGE" == "ja" ]; then
      echo "Your language is: Japanese"
-     myModel="tts_models/ja/kokoro/tacotron2-DDC"
-     myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
 else
      echo "Your language is invalid: "$LANGUAGE""
      LANGUAGE="unknow"
-     myModel="tts_models/en/ljspeech/glow-tts"
-     myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
      # failure, wrong parameter entered
      exit 1
 fi
-
-# Create a log by each audio created
-logFile="$parentPath"/logs/"$LANGUAGE"/"$fileName2".log
-exec > >(tee -i ${logFile}) 2>&1
 
 # Read the file content
 echo "Original name: $fileName"
@@ -75,20 +55,16 @@ else
      # Read the file's content and remove blank lines
      fileContent=$(grep '[^[:blank:]]' <"$parentPath"/txtfiles/"$LANGUAGE"/"$fileName")
      echo "Your file has something: $fileContent"
-     echo "Model chosen: $myModel"
-     echo "Vocoder chosen: $myVocoder"
-     # Create a folder to save wav files
-     mkdir -vp $parentPath/audios/"$LANGUAGE"/"$fileNamenotxt"
+     # Create a folder to save txt files
+     mkdir -vp $parentPath/txtfiles/"$LANGUAGE"/"$fileNamenotxt"
      # Begin while
      n=1
      while read line; do
-     # Convert by Mozilla Text To Speech the text into an audio.wav
-        tts --text "$line" \
-            --model_name "$myModel" \
-            --vocoder_name "$myVocoder" \
-            --out_path "$parentPath"/audios/"$LANGUAGE"/"$fileNamenotxt"/"$n""$fileNamenotxt".wav
+     # Print each line from the book.txt into a txt file       
+        echo "$line" > "$parentPath"/txtfiles/"$LANGUAGE"/"$fileNamenotxt"/"$n""$fileName2"
         n=$((n+1))
      done <<< "$fileContent"
+     echo "Your book.txt has: $(($n-1)) lines."
      # End while
 fi
 echo "This script stopped in exit: $?"
