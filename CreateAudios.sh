@@ -49,7 +49,7 @@ elif [ "$LANGUAGE" == "ja" ]; then
      myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
 else
      echo "Your language is invalid: "$LANGUAGE""
-     LANGUAGE="unknow"
+     LANGUAGE="unknown"
      myModel="tts_models/en/ljspeech/glow-tts"
      myVocoder="vocoder_models/universal/libri-tts/fullband-melgan"
      # failure, wrong parameter entered

@@ -65,6 +65,6 @@ https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 ## Help!
 
-This script use an Artificial Intelligence (AI) application (Mozilla tts), so the audio voice generated it is kind of robotic. My native language is Spanish and I understand a little bit English; if your native language is one of the above (or need another one), please help us. I will add my favorite book (Alice’s Adventures in Wonderland) to each language and here you can verify if the text is correct. If you love AI and Mozilla tts, please help them to have the best tts in the world.
+This script uses an Artificial Intelligence (AI) application (Mozilla tts), so the audio voice generated it is kind of robotic. My native language is Spanish and I understand a little bit English; if your native language is one of the above (or need another one), please help us. I will add my favorite book (Alice’s Adventures in Wonderland) to each language and here you can verify if the text is correct. If you love AI and Mozilla tts, please help them to have the best tts in the world.
 
 My soul is full if I'm learning something new. If you are like me, please share your knowledge!

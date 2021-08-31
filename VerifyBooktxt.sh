@@ -35,7 +35,7 @@ elif [ "$LANGUAGE" == "ja" ]; then
      echo "Your language is: Japanese"
 else
      echo "Your language is invalid: "$LANGUAGE""
-     LANGUAGE="unknow"
+     LANGUAGE="unknown"
      # failure, wrong parameter entered
      exit 1
 fi
@@ -56,12 +56,14 @@ else
      fileContent=$(grep '[^[:blank:]]' <"$parentPath"/txtfiles/"$LANGUAGE"/"$fileName")
      echo "Your file has something: $fileContent"
      # Create a folder to save txt files
-     mkdir -vp $parentPath/txtfiles/"$LANGUAGE"/"$fileNamenotxt"
+     fnf="$parentPath"/txtfiles/"$LANGUAGE"/temp
+     [ ! -d "$fnf" ] && mkdir -vp "$fnf"
+     mkdir -vp "$parentPath"/txtfiles/"$LANGUAGE"/temp/"$fileNamenotxt"
      # Begin while
      n=1
      while read line; do
      # Print each line from the book.txt into a txt file       
-        echo "$line" > "$parentPath"/txtfiles/"$LANGUAGE"/"$fileNamenotxt"/"$n""$fileName2"
+        echo "$line" > "$parentPath"/txtfiles/"$LANGUAGE"/temp/"$fileNamenotxt"/"$n""$fileName2"
         n=$((n+1))
      done <<< "$fileContent"
      echo "Your book.txt has: $(($n-1)) lines."
